@@ -1,50 +1,77 @@
-body {
-  font-family: Arial, sans-serif;
+/* Reset some basic elements */
+* {
   margin: 0;
   padding: 0;
-  background: #f9f9f9;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f8fa;
   color: #333;
 }
 
-.container {
-  width: 90%;
-  max-width: 960px;
-  margin: 0 auto;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Header */
 header {
-  background: #007b5e;
+  background-color: #0275d8;
   color: white;
-  padding: 1em 0;
-}
-header h1 {
-  margin: 0;
-}
-nav {
-  margin-top: 0.5em;
-}
-nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 15px;
-}
-nav a:hover {
-  text-decoration: underline;
+  padding: 2rem 1rem;
+  text-align: center;
 }
 
-/* Hero Section */
-.hero {
-  padding: 2em 0;
-  text-align: center;
-  background: #e0f7fa;
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.2rem;
+}
+
+/* Main */
+main {
+  flex: 1;
+  padding: 2rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #0275d8;
+}
+
+.doctor {
+  background: #fff;
+  border-left: 4px solid #5bc0de;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.doctor h3 {
+  color: #333;
+  margin-bottom: 0.5rem;
 }
 
 /* Footer */
 footer {
-  background: #333;
-  color: white;
-  padding: 1em 0;
+  background-color: #222;
+  color: #fff;
   text-align: center;
-  margin-top: 2em;
+  padding: 1rem;
+  font-size: 0.9rem;
+  margin-top: auto;
 }
