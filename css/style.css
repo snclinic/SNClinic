@@ -1,0 +1,50 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  background: #007b5e;
+  color: white;
+  padding: 1em 0;
+}
+header h1 {
+  margin: 0;
+}
+nav {
+  margin-top: 0.5em;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+  padding: 2em 0;
+  text-align: center;
+  background: #e0f7fa;
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: white;
+  padding: 1em 0;
+  text-align: center;
+  margin-top: 2em;
+}
