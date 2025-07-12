@@ -1,54 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SN Clinic</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <title>S.N Clinic</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f7fa;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #005eb8;
+      color: white;
+      padding: 25px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    header p {
+      margin: 5px 0;
+      font-size: 1rem;
+    }
+
+    header .address {
+      margin-top: 10px;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: #d0e3f3;
+    }
+
+    main {
+      flex: 1;
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .doctor-card {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-left: 6px solid #005eb8;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .doctor-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .doctor-card h3 {
+      margin: 0 0 10px;
+      color: #004080;
+    }
+
+    .doctor-card p {
+      margin: 6px 0;
+      font-size: 1rem;
+    }
+
+    footer {
+      background-color: #333;
+      color: #ccc;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      main {
+        padding: 20px 15px;
+      }
+
+      .doctor-card {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="wrapper">
-    <!-- Header -->
-    <header>
-      <h1>SN Clinic</h1>
-      <p>Comprehensive Family Healthcare</p>
-    </header>
 
-    <!-- Main Content -->
-    <main>
-      <section class="clinic-info">
-        <h2>📍 Clinic Address</h2>
-        <p>123 Main Street, Chennai, Tamil Nadu</p>
-        <p>📞 Call: +91-98765-43210</p>
-      </section>
+<header>
+  <h1>S.N CLINIC</h1>
+  <p>Clinic Timings: 9:00 AM – 1:00 PM | 12:00 PM – 2:00 PM | 4:00 PM – 9:00 PM</p>
+  <p class="address">📍 123 Main Street, Theni, Tamil Nadu 625531</p>
+</header>
 
-      <section class="doctors">
-        <h2>👨‍⚕️ Our Doctors</h2>
+<main>
 
-        <div class="doctor">
-          <h3>Dr. S. Shriram, MBBS, MD</h3>
-          <p>Pediatrics & General Medicine</p>
-          <p><strong>குழந்தை மற்றும் பொதுச் சிகிச்சை மருத்துவர்</strong></p>
-        </div>
-
-        <div class="doctor">
-          <h3>Dr. Ms. Neethu</h3>
-          <p>General Medicine & Women Care</p>
-          <p><strong>பொது சிகிச்சை மற்றும் மகளிர் பராமரிப்பு</strong></p>
-        </div>
-
-        <div class="doctor">
-          <h3>Dr. S. Sindhuja, MBBS, MD (DVL)</h3>
-          <p>Dermatologist</p>
-          <p><strong>தோல் மற்றும் ஒத்திகை மருத்துவ நிபுணர்</strong></p>
-        </div>
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-      <p>&copy; 2025 SN Clinic. All rights reserved.</p>
-    </footer>
+  <div class="doctor-card">
+    <h3>Dr. M.S. Neethu – M.B.B.S</h3>
+    <p><strong>Specialization:</strong> General Medicine, Women's Health</p>
+    <p><strong>பணி:</strong> பொதுநலம், பெண்கள் நலம் மருத்துவர்</p>
+    <p><strong>Phone:</strong> 63806 26667</p>
   </div>
+
+  <div class="doctor-card">
+    <h3>Dr. S. Shriram – M.B.B.S, M.D (Paed)</h3>
+    <p><strong>Specialization:</strong> Pediatrics, Child and General Medicine</p>
+    <p><strong>பணி:</strong> பச்சிளம் குழந்தைகள், குழந்தைகள் நலம் மற்றும் பொதுநலம் மருத்துவர்</p>
+    <p><strong>Available:</strong> Morning & Evening</p>
+  </div>
+
+  <div class="doctor-card">
+    <h3>Dr. S. Sindhuja – M.B.B.S, M.D (DVL)</h3>
+    <p><strong>Specialization:</strong> Dermatology & Cosmetic Treatments</p>
+    <p><strong>பணி:</strong> சிறப்பு தோல் மற்றும் அழகியல் சிகிச்சை நிபுணர்</p>
+    <p><strong>Available:</strong> 12:00 PM to 2:00 PM</p>
+    <p><strong>Phone:</strong> 75300 30052</p>
+  </div>
+
+</main>
+
+<footer>
+  &copy; 2025 S.N Clinic. All rights reserved.
+</footer>
+
 </body>
 </html>
