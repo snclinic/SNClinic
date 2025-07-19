@@ -2,283 +2,219 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SN Clinic</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
+    * {
+      box-sizing: border-box;
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f7fa;
-      color: #333;
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
 
     header {
-      background-color: #005eb8;
+      background-color: #007B9E;
       color: white;
-      padding: 20px;
-      text-align: center;
+      padding: 10px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
     }
 
-    .branding {
+    .logo-title {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
+      gap: 10px;
     }
 
     .logo {
-      height: 60px;
-      width: auto;
-    }
-
-    .branding h1 {
-      margin: 0;
-      font-size: 2rem;
+      width: 40px;
+      height: 40px;
     }
 
     nav {
-      background-color: #004080;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      position: relative;
+      gap: 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px;
+    }
+
+    nav a.active, nav a:hover {
+      background: #005f73;
+      border-radius: 4px;
     }
 
     .menu-toggle {
       display: none;
+      font-size: 24px;
       background: none;
       border: none;
       color: white;
-      font-size: 2rem;
       cursor: pointer;
-      padding: 12px 20px;
-    }
-
-    .menu {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .menu a {
-      padding: 14px 20px;
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      border-bottom: 3px solid transparent;
-      transition: background 0.3s;
-    }
-
-    .menu a:hover,
-    .menu a.active {
-      background-color: #003366;
-      border-bottom: 3px solid #00bfff;
     }
 
     main {
       flex: 1;
-      padding: 30px 20px;
-      max-width: 1000px;
-      margin: auto;
-      width: 100%;
+      padding: 20px;
     }
 
     .tab-content {
       display: none;
-      animation: fadeIn 0.5s ease-in-out;
     }
 
     .tab-content.active {
       display: block;
     }
 
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-
     .doctor-card {
-      background-color: #fff;
-      border-left: 6px solid #005eb8;
-      border-radius: 10px;
-      padding: 20px;
-      margin-bottom: 25px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .doctor-card h3 {
-      margin: 0 0 10px;
-      color: #004080;
-    }
-
-    .doctor-card p {
-      margin: 6px 0;
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      background: #f9f9f9;
     }
 
     footer {
-      background-color: #333;
-      color: #ccc;
       text-align: center;
-      padding: 15px 10px;
-      font-size: 0.9rem;
+      padding: 10px;
+      background-color: #007B9E;
+      color: white;
+      margin-top: auto;
     }
 
-    /* Mobile Styles */
+    /* Responsive Styles */
     @media (max-width: 768px) {
-      header {
-        padding: 15px;
-      }
-
-      .logo {
-        height: 45px;
-      }
-
-      .branding h1 {
-        font-size: 1.5rem;
-      }
-
       nav {
+        display: none;
         flex-direction: column;
-        align-items: flex-start;
+        width: 100%;
+        background-color: #007B9E;
+      }
+
+      nav.show {
+        display: flex;
       }
 
       .menu-toggle {
         display: block;
-        margin-left: auto;
-        margin-right: 10px;
       }
 
-      .menu {
-        flex-direction: column;
-        width: 100%;
-        display: none;
+      .logo-title h1 {
+        font-size: 20px;
       }
 
-      .menu.show {
-        display: flex;
-      }
-
-      .menu a {
-        width: 100%;
-        text-align: left;
-        padding: 12px 20px;
-        border-top: 1px solid #005eb8;
+      .logo {
+        width: 32px;
+        height: 32px;
       }
     }
   </style>
 </head>
 <body>
-
-<header>
-  <div class="branding">
-    <img src="images/logo.png" class="logo" alt="SN Clinic Logo" />
-    <h1>SN CLINIC</h1>
-  </div>
-  <p>📍 V.R.P. காம்பளக்ஸ், முத்தூர் ரோடு, க.ஒத்தக்கடை, கொடுமுடி – 638 151</p>
-</header>
-
-<nav>
-  <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-  <div class="menu">
-    <a href="#doctors" class="active">Doctors</a>
-    <a href="#about">About</a>
-    <a href="#timings">Timings</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
-
-<main>
-  <section id="doctors" class="tab-content active">
-    <div class="doctor-card">
-      <h3>Dr. M.S. Neethu – M.B.B.S</h3>
-      <p><strong>Specialization:</strong> General Medicine, Women's Health</p>
-      <p><strong>பணி:</strong> பொதுநலம், பெண்கள் நலம் மருத்துவர்</p>
-      <p><strong>Available:</strong> 9:00 AM to 1:00 PM</p>
+  <header>
+    <div class="logo-title">
+      <img src="images/logo.png" alt="SN Clinic Logo" class="logo"/>
+      <h1>SN CLINIC</h1>
     </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    <nav id="navbar">
+      <a href="#doctors" class="active">Doctors</a>
+      <a href="#about">About</a>
+      <a href="#timings">Timings</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <div class="doctor-card">
-      <h3>Dr. S. Shriram – M.B.B.S, M.D (Paed)</h3>
-      <p><strong>Specialization:</strong> Pediatrics, Child and General Medicine</p>
-      <p><strong>பணி:</strong> பச்சிளம் குழந்தைகள், குழந்தைகள் நலம் மற்றும் பொதுநலம் மருத்துவர்</p>
-      <p><strong>Available:</strong> 04:00 PM to 9:00 PM</p>
-    </div>
+  <main>
+    <section id="doctors" class="tab-content active">
+      <div class="doctor-card">
+        <h3>Dr. M.S. Neethu – M.B.B.S</h3>
+        <p><strong>Specialization:</strong> General Medicine, Women's Health</p>
+        <p><strong>பணி:</strong> பொதுநலம், பெண்கள் நலம் மருத்துவர்</p>
+        <p><strong>Available:</strong> 9:00 AM to 1:00 PM</p>
+      </div>
 
-    <div class="doctor-card">
-      <h3>Dr. S. Sindhuja – M.B.B.S, M.D (DVL)</h3>
-      <p><strong>Specialization:</strong> Dermatology & Cosmetic Treatments</p>
-      <p><strong>பணி:</strong> சிறப்பு தோல் மற்றும் அழகியல் சிகிச்சை நிபுணர்</p>
-      <p><strong>Available:</strong> 12:00 PM to 2:00 PM</p>
-    </div>
-  </section>
+      <div class="doctor-card">
+        <h3>Dr. S. Shriram – M.B.B.S, M.D (Paed)</h3>
+        <p><strong>Specialization:</strong> Pediatrics, Child and General Medicine</p>
+        <p><strong>பணி:</strong> பச்சிளம் குழந்தைகள், குழந்தைகள் நலம் மற்றும் பொதுநலம் மருத்துவர்</p>
+        <p><strong>Available:</strong> 04:00 PM to 9:00 PM</p>
+      </div>
 
-  <section id="about" class="tab-content">
-    <h2>About SN Clinic</h2>
-    <p>SN Clinic is dedicated to providing compassionate, high-quality healthcare. With experienced doctors in general medicine, pediatrics, and dermatology, we aim to treat each patient with personalized attention and care.</p>
-  </section>
+      <div class="doctor-card">
+        <h3>Dr. S. Sindhuja – M.B.B.S, M.D (DVL)</h3>
+        <p><strong>Specialization:</strong> Dermatology & Cosmetic Treatments</p>
+        <p><strong>பணி:</strong> சிறப்பு தோல் மற்றும் அழகியல் சிகிச்சை நிபுணர்</p>
+        <p><strong>Available:</strong> 12:00 PM to 2:00 PM</p>
+      </div>
+    </section>
 
-  <section id="timings" class="tab-content">
-    <h2>Clinic Timings</h2>
-    <ul>
-      <li><strong>Morning:</strong> 9:00 AM – 1:00 PM</li>
-      <li><strong>Noon:</strong> 12:00 PM – 2:00 PM</li>
-      <li><strong>Evening:</strong> 4:00 PM – 9:00 PM</li>
-    </ul>
-  </section>
+    <section id="about" class="tab-content">
+      <h2>About SN Clinic</h2>
+      <p>SN Clinic is dedicated to providing compassionate, high-quality healthcare. With experienced doctors in general medicine, pediatrics, and dermatology, we aim to treat each patient with personalized attention and care.</p>
+    </section>
 
-  <section id="contact" class="tab-content">
-    <h2>Contact</h2>
-    <p><strong>Location:</strong> V.R.P. Complex, Muthur Road, K. Othakkadai, Kodumudi – 638 151</p>
-    <p><strong>Phone:</strong> 6380626667</p>
-  </section>
-</main>
+    <section id="timings" class="tab-content">
+      <h2>Clinic Timings</h2>
+      <ul>
+        <li><strong>Morning:</strong> 9:00 AM – 1:00 PM</li>
+        <li><strong>Noon:</strong> 12:00 PM – 2:00 PM</li>
+        <li><strong>Evening:</strong> 4:00 PM – 9:00 PM</li>
+      </ul>
+    </section>
 
-<footer>
-  “Caring for every life we touch.” <br /> &copy; 2025 SN Clinic
-</footer>
+    <section id="contact" class="tab-content">
+      <h2>Contact</h2>
+      <p><strong>Location:</strong> V.R.P. Complex, Muthur Road, K. Othakkadai, Kodumudi – 638 151</p>
+      <p><strong>Phone:</strong> 6380626667</p>
+    </section>
+  </main>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const toggleBtn = document.querySelector('.menu-toggle');
-    const menu = document.querySelector('.menu');
+  <footer>
+    “Caring for every life we touch."
+  </footer>
 
-    toggleBtn.addEventListener('click', () => {
-      menu.classList.toggle('show');
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navbar = document.getElementById('navbar');
+
+    menuToggle.addEventListener('click', () => {
+      navbar.classList.toggle('show');
     });
 
-    // Tab functionality
-    const tabs = document.querySelectorAll("nav a");
-    const contents = document.querySelectorAll(".tab-content");
+    const navLinks = document.querySelectorAll('nav a');
+    const tabContents = document.querySelectorAll('.tab-content');
 
-    tabs.forEach(tab => {
-      tab.addEventListener("click", (e) => {
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
         e.preventDefault();
-        const target = tab.getAttribute("href").replace("#", "");
 
-        tabs.forEach(t => t.classList.remove("active"));
-        contents.forEach(c => c.classList.remove("active"));
+        // Remove active class from all links and tabs
+        navLinks.forEach(l => l.classList.remove('active'));
+        tabContents.forEach(tab => tab.classList.remove('active'));
 
-        tab.classList.add("active");
-        document.getElementById(target).classList.add("active");
+        // Add active class to clicked link and corresponding tab
+        link.classList.add('active');
+        const target = link.getAttribute('href').substring(1);
+        document.getElementById(target).classList.add('active');
 
-        history.pushState(null, "", `#${target}`);
-        menu.classList.remove("show"); // Close menu after selection
+        // Close nav on mobile after click
+        if (window.innerWidth <= 768) {
+          navbar.classList.remove('show');
+        }
       });
     });
-
-    const hash = window.location.hash.replace("#", "") || "doctors";
-    document.querySelector(`nav a[href="#${hash}"]`)?.click();
-  });
-</script>
-
+  </script>
 </body>
 </html>
