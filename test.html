@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  	<meta name="google-site-verification" content="1Y6vYb6ddp5vjlXmArgDC7h8CLeh0EHf47pIZlapPiE" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Primary Meta Tags -->
+<title>SN Clinic Kodumudi – Compassionate Family Healthcare</title>
+<meta name="title" content="SN Clinic Kodumudi – Compassionate Family Healthcare">
+<meta name="description" content="SN Clinic offers expert pediatric, women's health, skin care, diabetes & general medicine services in Kodumudi. Trusted doctors. Affordable care.">
+
+<!-- Keywords for SEO -->
+<meta name="keywords" content="SN Clinic, Kodumudi clinic, pediatric doctor, women's health, skin care, general medicine, best clinic Kodumudi, Dr. Neethu, Dr. Shriram, Dr. Sindhuja">
+
+<!-- Author -->
+<meta name="author" content="SN Clinic, Kodumudi">
+
+<!-- Viewport for responsive design -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Robots (for indexing by search engines) -->
+<meta name="robots" content="index, follow">
+  <title>SN Clinic</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f2f4f8;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #003d54;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+/* Hero Banner */
+.hero-banner img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Section Title */
+.features-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #007B9E;
+  margin-bottom: 20px;
+}
+
+/* Features Grid Layout */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 0 20px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Feature Card */
+.feature-card {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+}
+
+.feature-card h3 {
+  margin-bottom: 10px;
+  color: #007B9E;
+  font-size: 1.2rem;
+}
+
+.feature-card p {
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+    .logo {
+      width: 40px;
+      height: 40px;
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px;
+    }
+
+    nav a.active, nav a:hover {
+      background: #005f73;
+      border-radius: 4px;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    main {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .doctor-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: transform 0.2s ease;
+    }
+
+    .doctor-card:hover {
+      transform: scale(1.01);
+    }
+
+    .doctor-card h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      color: #007B9E;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .doctor-info p {
+      margin: 8px 0;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    .doctor-info strong {
+      display: inline-block;
+      width: 140px;
+      color: #555;
+    }
+
+    footer {
+      text-align: center;
+      padding: 12px;
+      background-color: #003d54;
+      color: white;
+      margin-top: auto;
+    }
+.hero-banner-icons {
+  background: linear-gradient(135deg, #e3f2fd, #ffffff);
+  padding: 80px 20px;
+  text-align: center;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.hero-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hero-icon {
+  font-size: 72px;
+  margin-bottom: 24px;
+  animation: bounce 2s infinite;
+}
+
+.hero-banner-icons h1 {
+  font-size: 2.5rem;
+  color: #01579b;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.hero-banner-icons .tamil {
+  font-size: 1.3rem;
+  color: #00695c;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.hero-banner-icons p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.hero-button {
+  display: inline-block;
+  background-color: #007b9e;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: #004d61;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@media (max-width: 600px) {
+  .hero-banner-icons h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-banner-icons .tamil {
+    font-size: 1.1rem;
+  }
+
+  .hero-icon {
+    font-size: 56px;
+  }
+}
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #003d54;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .logo-title h1 {
+        font-size: 20px;
+      }
+
+      .logo {
+        width: 32px;
+        height: 32px;
+      }
+
+      main {
+        padding: 16px;
+      }
+
+      .doctor-card {
+        padding: 18px 16px;
+      }
+
+      .doctor-card h3 {
+        font-size: 1.05rem;
+        margin-bottom: 10px;
+        gap: 6px;
+      }
+
+      .doctor-info p {
+        font-size: 0.95rem;
+        margin: 6px 0;
+        line-height: 1.6;
+      }
+
+      .doctor-info strong {
+        display: block;
+        width: auto;
+        margin-bottom: 2px;
+      }
+    }
+
+    @media (min-width: 769px) {
+      main {
+        padding: 20px 60px;
+        margin-left: 150px;
+      }
+.cards-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.doctor-card {
+  width: 100%;
+  max-width: 600px;
+}
+
+    }
+.accordion .accordion-item {
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.accordion-header {
+  background-color: #f2faff;
+  color: #333;
+  cursor: pointer;
+  padding: 14px 18px;
+  font-size: 1rem;
+  font-weight: bold;
+  width: 100%;
+  text-align: left;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-header:hover {
+  background-color: #e0f2ff;
+}
+
+.accordion-body {
+  padding: 14px 18px;
+  display: none;
+  background-color: #fff;
+  font-size: 0.95rem;
+}
+
+.accordion-item.active .accordion-body {
+  display: block;
+}
+
+.arrow-icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.accordion-item.active .arrow-icon {
+  transform: rotate(180deg);
+}
+  .language-switcher {
+      margin: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: white;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Hide Google branding and UI */
+    .goog-te-banner-frame.skiptranslate,
+    .goog-logo-link,
+    .goog-te-gadget {
+      display: none !important;
+    }
+	 #app {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+
+  <header>
+  <a href="index.html" class="logo-title" style="text-decoration: none; color: inherit;">
+  <img src="images/logo.png" alt="SN Clinic Logo" class="logo"/>
+  <h1>SN CLINIC</h1>
+</a>
+  <div class="language-switcher">
+    <button id="translateEnglish">English</button>
+    <button id="translateTamil">தமிழ்</button>
+  </div>
+    <div id="app"></div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    <nav id="navbar">
+	 <a href="#home" class="active">Home</a>
+      <a href="#doctors" >Doctors</a>
+      <a href="#about">About</a>
+      <a href="#timings">Timings</a>
+	        <a href="#healthtips" >Health Tips</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+  <section id="home" class="tab-content active">
+  <!-- Hero Banner -->
+ <div class="hero-banner-icons">
+    <div class="hero-content">
+      <div class="hero-icon">👨‍⚕️</div>
+      <h1>Welcome to SN Clinic</h1>
+      <p>Comprehensive care for your family's health & well-being.</p>
+      <p class="tamil">உங்கள் குடும்ப ஆரோக்கியத்திற்கான முழுமையான பராமரிப்பு</p>
+
+    </div>
+  </div>
+  <!-- Section Title -->
+  <h2 class="features-title">Our Services</h2>
+
+  <!-- Services Grid -->
+<div class="features-grid">
+  <div class="feature-card">
+    <div class="icon">🧒</div>
+    <h3>Children Care | குழந்தைகள் பராமரிப்பு</h3>
+    <p>Compassionate pediatric care for children of all ages. | அனைத்து வயது குழந்தைகளுக்கும் கருணையான குழந்தை மருத்துவ பராமரிப்பு.</p>
+  </div>
+  <div class="feature-card">
+    <div class="icon">👶</div>
+    <h3>Newborn Care | புதிதாகப் பிறந்த குழந்தைகளுக்கான பராமரிப்பு</h3>
+    <p>Special care for newborns and infants by experts. | புதிதாகப் பிறந்த மற்றும் கைக்குழந்தைகளுக்கு நிபுணர்களால் சிறப்புப் பராமரிப்பு.</p>
+  </div>
+  <div class="feature-card">
+    <div class="icon">🌡️</div>
+    <h3>Fever & Flu | காய்ச்சல் மற்றும் சளி</h3>
+    <p>Timely diagnosis and effective treatment for fevers. | காய்ச்சல்களுக்கு சரியான நேரத்தில் கண்டறிதல் மற்றும் பயனுள்ள சிகிச்சை.</p>
+  </div>
+  <div class="feature-card">
+    <div class="icon">🤧</div>
+    <h3>Cough & Cold | இருமல் மற்றும் சளி</h3>
+    <p>Treatment for chronic or acute cough and cold symptoms. | நாள்பட்ட அல்லது தீவிர இருமல் மற்றும் சளி அறிகுறிகளுக்கான சிகிச்சை.</p>
+  </div>
+  <div class="feature-card">
+    <div class="icon">💩</div>
+    <h3>Diarrhea | வயிற்றுப்போக்கு</h3>
+    <p>Immediate care and advice for digestive issues. | செரிமான பிரச்சனைகளுக்கு உடனடி பராமரிப்பு மற்றும் ஆலோசனை.</p>
+  </div>
+  <div class="feature-card">
+    <div class="icon">💬</div>
+    <h3>General Consultation | பொது ஆலோசனை</h3>
+    <p>Daily consultation for all medical concerns. | அனைத்து மருத்துவக் கவலைகளுக்கும் தினசரி ஆலோசனை.</p>
+  </div>
+<div class="feature-card">
+    <div class="icon">👩‍⚕️</div>
+    <h3>Women's Health | பெண்கள் நலம்</h3>
+    <p>Comprehensive care for women at all life stages. | பெண்களின் அனைத்து வாழ்க்கை நிலைகளிலும் விரிவான பராமரிப்பு.</p>
+</div>
+  <div class="feature-card">
+    <div class="icon">🧴</div>
+    <h3>Skin & Cosmetic | தோல் மற்றும் அழகுசாதனப் பொருட்கள்</h3>
+    <p>Acne, eczema, pigmentation, and glow-up treatments. | முகப்பரு, அரிக்கும் தோலழற்சி, நிறமிழப்பு மற்றும் பளபளப்பான சிகிச்சை.</p>
+  </div>
+  <div class="feature-card">
+    <div class="icon">🩸</div>
+    <h3>Diabetes Care | நீரிழிவு பராமரிப்பு</h3>
+    <p>Blood sugar checkups, diet advice & medication support. | இரத்த சர்க்கரை பரிசோதனைகள், உணவு ஆலோசனை மற்றும் மருந்து ஆதரவு.</p>
+  </div>
+  <div class="feature-card">
+    <div class="icon">🫀</div>
+    <h3>BP Management | இரத்த அழுத்த மேலாண்மை</h3>
+    <p>Blood pressure monitoring & control with lifestyle care. | வாழ்க்கை முறை பராமரிப்புடன் இரத்த அழுத்த கண்காணிப்பு மற்றும் கட்டுப்பாடு.</p>
+  </div>
+</div>
+<div style="border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-top: 20px; position: relative; padding-bottom: 56.25%; /* 16:9 Aspect Ratio */ height: 0;">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.444541389818!2d77.8636607!3d11.0802089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba98195d706f8a3%3A0x829aca0504232d08!2sSN%20CLINIC!5e0!3m2!1sen!2sus!4v1752957536028!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+</div>
+</section>
+
+    <section id="doctors" class="tab-content " >
+	<div class="cards-wrapper">
+      <div class="doctor-card" >
+        <h3>👩‍⚕️ Dr. M.S. Neethu – M.B.B.S</h3>
+        <div class="doctor-info">
+          <p><strong>Specialization:</strong> General Medicine, Women's Health</p>
+          <p><strong>பணி:</strong> பொதுநலம், பெண்கள் நலம் மருத்துவர்</p>
+          <p><strong>Available:</strong> 9:00 AM to 1:00 PM</p>
+        </div>
+      </div>
+
+      <div class="doctor-card">
+        <h3>👨‍⚕️ Dr. S. Shriram – M.B.B.S, M.D (Paed)</h3>
+        <div class="doctor-info">
+          <p><strong>Specialization:</strong> Pediatrics, Child and General Medicine</p>
+          <p><strong>பணி:</strong> பச்சிளம் குழந்தைகள், குழந்தைகள் நலம் மற்றும் பொதுநலம் மருத்துவர்</p>
+          <p><strong>Available:</strong> 04:00 PM to 9:00 PM</p>
+        </div>
+      </div>
+
+      <div class="doctor-card">
+        <h3>🧴 Dr. S. Sindhuja – M.B.B.S, M.D (DVL)</h3>
+        <div class="doctor-info">
+          <p><strong>Specialization:</strong> Dermatology & Cosmetic Treatments</p>
+          <p><strong>பணி:</strong> சிறப்பு தோல் மற்றும் அழகியல் சிகிச்சை நிபுணர்</p>
+          <p><strong>Available:</strong> 12:00 PM to 2:00 PM</p>
+        </div>
+      </div>
+	     </div>
+    </section>
+<section id="healthtips" class="tab-content">
+  <h2>Health Tips | ஆரோக்கிய குறிப்புகள்</h2>
+
+  <div class="accordion">
+
+    <div class="accordion-item">
+      <button class="accordion-header">
+        💧 Diarrhea 
+        <span class="arrow-icon">▼</span>
+      </button>
+      <div class="accordion-body">
+        <ul>
+          <li>🍼 Give ORS or electrolyte solution to prevent dehydration.</li>
+          <li>💧 Ensure the child drinks clean, boiled or bottled water.</li>
+          <li>🍽️ Feed light foods like rice porridge or curd rice.</li>
+          <li>🚫 Avoid spicy, fried, and sugary foods.</li>
+          <li>🩺 Consult your doctor if it continues for more than 2 days.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header">
+        🌡️ Fever 
+        <span class="arrow-icon">▼</span>
+      </button>
+      <div class="accordion-body">
+        <ul>
+          <li>🤒 Use a thermometer to track temperature regularly.</li>
+          <li>🧊 Apply a cold compress to lower body heat.</li>
+          <li>💊 Administer paracetamol as advised by your doctor.</li>
+          <li>💧 Keep the child well hydrated.</li>
+          <li>🩺 Visit a doctor if the fever lasts more than 2 days or is very high.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header">
+        🧼 Hygiene Tips 
+        <span class="arrow-icon">▼</span>
+      </button>
+      <div class="accordion-body">
+        <ul>
+          <li>👐 Wash hands before eating and after using the toilet.</li>
+          <li>🧽 Clean toys and frequently touched surfaces regularly.</li>
+          <li>🚽 Teach children to use toilets properly and wash after use.</li>
+          <li>🌿 Avoid street food for children.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  
+
+    <section id="about" class="tab-content">
+      <h2>About SN Clinic</h2>
+      <p>SN Clinic is dedicated to providing compassionate, high-quality healthcare. With experienced doctors in general medicine, pediatrics, and dermatology, we aim to treat each patient with personalized attention and care.</p>
+    </section>
+
+    <section id="timings" class="tab-content">
+      <h2>Clinic Timings</h2>
+      <ul>
+        <li><strong>Morning:</strong> 9:00 AM – 1:00 PM</li>
+        <li><strong>Noon:</strong> 12:00 PM – 2:00 PM</li>
+        <li><strong>Evening:</strong> 4:00 PM – 9:00 PM</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="tab-content">
+      <h2>Contact</h2>
+      <p><strong>Location:</strong> V.R.P. Complex, Muthur Road, K. Othakkadai, Kodumudi – 638 151</p>
+      <p><strong>Phone:</strong> 6380626667</p>
+
+
+<!-- Add this below -->
+
+<div style="border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-top: 20px; position: relative; padding-bottom: 56.25%; /* 16:9 Aspect Ratio */ height: 0;">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.444541389818!2d77.8636607!3d11.0802089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba98195d706f8a3%3A0x829aca0504232d08!2sSN%20CLINIC!5e0!3m2!1sen!2sus!4v1752957536028!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+</div>
+    </section>
+  </main>
+
+  <footer>
+    “Caring for every life we touch."
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navbar = document.getElementById('navbar');
+
+    menuToggle.addEventListener('click', () => {
+      navbar.classList.toggle('show');
+    });
+
+    const navLinks = document.querySelectorAll('nav a');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        navLinks.forEach(l => l.classList.remove('active'));
+        tabContents.forEach(tab => tab.classList.remove('active'));
+
+        link.classList.add('active');
+        const target = link.getAttribute('href').substring(1);
+        document.getElementById(target).classList.add('active');
+
+        if (window.innerWidth <= 768) {
+          navbar.classList.remove('show');
+        }
+      });
+    });
+
+  document.querySelectorAll(".accordion-header").forEach(button => {
+    button.addEventListener("click", () => {
+      const item = button.parentElement;
+      item.classList.toggle("active");
+    });
+  });
+
+function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,ta',
+        autoDisplay: false
+      }, 'app');
+    }
+
+    function loadGoogleTranslate() {
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+      document.head.appendChild(script);
+    }
+
+    function doGTranslate(langPair) {
+      if (!langPair) return;
+      var lang = langPair.split('|')[1];
+      var interval = setInterval(function () {
+        var select = document.querySelector('.goog-te-combo');
+        if (select) {
+          select.value = lang;
+          select.dispatchEvent(new Event('change'));
+          clearInterval(interval);
+        }
+      }, 500);
+    }
+
+    window.onload = function () {
+      loadGoogleTranslate();
+
+      document.getElementById('translateEnglish').addEventListener('click', function (e) {
+        e.preventDefault();
+        sessionStorage.removeItem('translate');
+        doGTranslate('en|en');
+      });
+
+      document.getElementById('translateTamil').addEventListener('click', function (e) {
+        e.preventDefault();
+        sessionStorage.setItem('translate', 'en|ta');
+        doGTranslate('en|ta');
+      });
+
+      var savedLang = sessionStorage.getItem('translate');
+      if (savedLang) {
+        doGTranslate(savedLang);
+      }
+    };
+  </script>
+
+
+</body>
+</html>
