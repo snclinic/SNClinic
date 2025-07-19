@@ -33,6 +33,58 @@
       align-items: center;
       gap: 10px;
     }
+/* Hero Banner */
+.hero-banner img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Section Title */
+.features-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #007B9E;
+  margin-bottom: 20px;
+}
+
+/* Features Grid Layout */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 0 20px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Feature Card */
+.feature-card {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+}
+
+.feature-card h3 {
+  margin-bottom: 10px;
+  color: #007B9E;
+  font-size: 1.2rem;
+}
+
+.feature-card p {
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
 
     .logo {
       width: 40px;
@@ -120,6 +172,78 @@
       color: white;
       margin-top: auto;
     }
+.hero-banner-icons {
+  background: linear-gradient(135deg, #e3f2fd, #ffffff);
+  padding: 80px 20px;
+  text-align: center;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.hero-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hero-icon {
+  font-size: 72px;
+  margin-bottom: 24px;
+  animation: bounce 2s infinite;
+}
+
+.hero-banner-icons h1 {
+  font-size: 2.5rem;
+  color: #01579b;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.hero-banner-icons .tamil {
+  font-size: 1.3rem;
+  color: #00695c;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.hero-banner-icons p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.hero-button {
+  display: inline-block;
+  background-color: #007b9e;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: #004d61;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@media (max-width: 600px) {
+  .hero-banner-icons h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-banner-icons .tamil {
+    font-size: 1.1rem;
+  }
+
+  .hero-icon {
+    font-size: 56px;
+  }
+}
 
     /* Responsive Styles */
     @media (max-width: 768px) {
@@ -127,7 +251,7 @@
         display: none;
         flex-direction: column;
         width: 100%;
-        background-color: #007B9E;
+        background-color: #003d54;
       }
 
       nav.show {
@@ -202,7 +326,8 @@
     </div>
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
     <nav id="navbar">
-      <a href="#doctors" class="active">Doctors</a>
+	 <a href="#home" class="active">Home</a>
+      <a href="#doctors" >Doctors</a>
       <a href="#about">About</a>
       <a href="#timings">Timings</a>
       <a href="#contact">Contact</a>
@@ -210,7 +335,76 @@
   </header>
 
   <main>
-    <section id="doctors" class="tab-content active" >
+  <section id="home" class="tab-content active">
+  <!-- Hero Banner -->
+ <div class="hero-banner-icons">
+    <div class="hero-content">
+      <div class="hero-icon">👨‍⚕️</div>
+      <h1>Welcome to SN Clinic</h1>
+      <p>Comprehensive care for your family's health & well-being.</p>
+      <p class="tamil">உங்கள் குடும்ப ஆரோக்கியத்திற்கான முழுமையான பராமரிப்பு</p>
+
+    </div>
+  </div>
+  <!-- Section Title -->
+  <h2 class="features-title">Our Services</h2>
+
+  <!-- Services Grid -->
+<div class="features-grid">
+  <div class="feature-card">
+    <div class="icon">🧒</div>
+    <h3>Children Care | குழந்தைகள் பராமரிப்பு</h3>
+    <p>Compassionate pediatric care for children of all ages. | அனைத்து வயது குழந்தைகளுக்கும் கருணையான குழந்தை மருத்துவ பராமரிப்பு.</p>
+  </div>
+  <div class="feature-card">
+    <div class="icon">👶</div>
+    <h3>Newborn Care | புதிதாகப் பிறந்த குழந்தைகளுக்கான பராமரிப்பு</h3>
+    <p>Special care for newborns and infants by experts. | புதிதாகப் பிறந்த மற்றும் கைக்குழந்தைகளுக்கு நிபுணர்களால் சிறப்புப் பராமரிப்பு.</p>
+  </div>
+  <div class="feature-card">
+    <div class="icon">🌡️</div>
+    <h3>Fever & Flu | காய்ச்சல் மற்றும் சளி</h3>
+    <p>Timely diagnosis and effective treatment for fevers. | காய்ச்சல்களுக்கு சரியான நேரத்தில் கண்டறிதல் மற்றும் பயனுள்ள சிகிச்சை.</p>
+  </div>
+  <div class="feature-card">
+    <div class="icon">🤧</div>
+    <h3>Cough & Cold | இருமல் மற்றும் சளி</h3>
+    <p>Treatment for chronic or acute cough and cold symptoms. | நாள்பட்ட அல்லது தீவிர இருமல் மற்றும் சளி அறிகுறிகளுக்கான சிகிச்சை.</p>
+  </div>
+  <div class="feature-card">
+    <div class="icon">💩</div>
+    <h3>Diarrhea | வயிற்றுப்போக்கு</h3>
+    <p>Immediate care and advice for digestive issues. | செரிமான பிரச்சனைகளுக்கு உடனடி பராமரிப்பு மற்றும் ஆலோசனை.</p>
+  </div>
+  <div class="feature-card">
+    <div class="icon">💬</div>
+    <h3>General Consultation | பொது ஆலோசனை</h3>
+    <p>Daily consultation for all medical concerns. | அனைத்து மருத்துவக் கவலைகளுக்கும் தினசரி ஆலோசனை.</p>
+  </div>
+<div class="feature-card">
+    <div class="icon">👩‍⚕️</div>
+    <h3>Women's Health | பெண்கள் நலம்</h3>
+    <p>Comprehensive care for women at all life stages. | பெண்களின் அனைத்து வாழ்க்கை நிலைகளிலும் விரிவான பராமரிப்பு.</p>
+</div>
+  <div class="feature-card">
+    <div class="icon">🧴</div>
+    <h3>Skin & Cosmetic | தோல் மற்றும் அழகுசாதனப் பொருட்கள்</h3>
+    <p>Acne, eczema, pigmentation, and glow-up treatments. | முகப்பரு, அரிக்கும் தோலழற்சி, நிறமிழப்பு மற்றும் பளபளப்பான சிகிச்சை.</p>
+  </div>
+  <div class="feature-card">
+    <div class="icon">🩸</div>
+    <h3>Diabetes Care | நீரிழிவு பராமரிப்பு</h3>
+    <p>Blood sugar checkups, diet advice & medication support. | இரத்த சர்க்கரை பரிசோதனைகள், உணவு ஆலோசனை மற்றும் மருந்து ஆதரவு.</p>
+  </div>
+  <div class="feature-card">
+    <div class="icon">🫀</div>
+    <h3>BP Management | இரத்த அழுத்த மேலாண்மை</h3>
+    <p>Blood pressure monitoring & control with lifestyle care. | வாழ்க்கை முறை பராமரிப்புடன் இரத்த அழுத்த கண்காணிப்பு மற்றும் கட்டுப்பாடு.</p>
+  </div>
+</div>
+</section>
+
+    <section id="doctors" class="tab-content " >
 	<div class="cards-wrapper">
       <div class="doctor-card" >
         <h3>👩‍⚕️ Dr. M.S. Neethu – M.B.B.S</h3>
