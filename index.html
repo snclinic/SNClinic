@@ -2,11 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>S.N Clinic</title>
+  <title>SN Clinic</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body {
+    html, body {
       margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f4f7fa;
       color: #333;
@@ -18,46 +23,69 @@
     header {
       background-color: #005eb8;
       color: white;
-      padding: 25px 20px;
+      padding: 20px;
       text-align: center;
     }
 
     header h1 {
-      margin: 0;
+      margin: 10px 0 5px;
       font-size: 2rem;
     }
 
-    header p {
-      margin: 5px 0;
-      font-size: 1rem;
+    .logo {
+      height: 60px;
     }
 
-    header .address {
-      margin-top: 10px;
-      font-style: italic;
-      font-size: 0.95rem;
-      color: #d0e3f3;
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #004080;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      padding: 14px 20px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      border-bottom: 3px solid transparent;
+      transition: background 0.3s;
+    }
+
+    nav a:hover, nav a.active {
+      background-color: #003366;
+      border-bottom: 3px solid #00bfff;
     }
 
     main {
       flex: 1;
-      padding: 40px 20px;
+      padding: 30px 20px;
       max-width: 1000px;
       margin: auto;
+      width: 100%;
+    }
+
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
     }
 
     .doctor-card {
       background-color: #fff;
-      border-radius: 10px;
-      padding: 25px;
-      margin-bottom: 30px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       border-left: 6px solid #005eb8;
-      transition: transform 0.2s ease-in-out;
-    }
-
-    .doctor-card:hover {
-      transform: translateY(-3px);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     .doctor-card h3 {
@@ -67,68 +95,144 @@
 
     .doctor-card p {
       margin: 6px 0;
-      font-size: 1rem;
     }
 
     footer {
       background-color: #333;
       color: #ccc;
       text-align: center;
-      padding: 20px 10px;
+      padding: 15px 10px;
       font-size: 0.9rem;
     }
+.branding {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+}
+
+.branding h1 {
+  margin: 0;
+  font-size: 2rem;
+}
 
     @media (max-width: 600px) {
       header h1 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
       }
 
-      main {
-        padding: 20px 15px;
+      nav a {
+        flex: 1 1 100%;
+        text-align: center;
       }
 
-      .doctor-card {
-        padding: 20px;
+      .logo {
+        height: 45px;
       }
+
+
+  .branding h1 {
+    font-size: 1.4rem;
+  }
     }
   </style>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const tabs = document.querySelectorAll("nav a");
+      const contents = document.querySelectorAll(".tab-content");
+
+      tabs.forEach(tab => {
+        tab.addEventListener("click", (e) => {
+          e.preventDefault();
+          const target = tab.getAttribute("href").replace("#", "");
+
+          tabs.forEach(t => t.classList.remove("active"));
+          contents.forEach(c => c.classList.remove("active"));
+
+          tab.classList.add("active");
+          document.getElementById(target).classList.add("active");
+
+          history.pushState(null, "", `#${target}`);
+        });
+      });
+
+      // Load tab based on hash
+      const hash = window.location.hash.replace("#", "") || "doctors";
+      document.querySelector(`nav a[href="#${hash}"]`)?.click();
+    });
+  </script>
 </head>
 <body>
 
 <header>
-  <h1>SN CLINIC</h1>
-  <p>Clinic Timings: 9:00 AM – 1:00 PM | 12:00 PM – 2:00 PM | 4:00 PM – 9:00 PM</p>
-  <p class="address">📍 V.R.P. காம்பளக்ஸ், முத்தூர் ரோடு, க.ஒத்தக்கடை, கொடுமுடி – 638 151</p>
+ <div class="branding">
+    <img src="images/logo.png" class="logo" alt="SN Clinic Logo">
+    <h1>SN CLINIC</h1>
+  </div>
+  <p>📍 V.R.P. காம்பளக்ஸ், முத்தூர் ரோடு, க.ஒத்தக்கடை, கொடுமுடி – 638 151</p>
 </header>
 
+<nav>
+  <a href="#doctors" class="active">Doctors</a>
+  <a href="#about">About</a>
+  <a href="#timings">Timings</a>
+  <a href="#contact">Contact</a>
+</nav>
+
 <main>
+  <section id="doctors" class="tab-content active">
+    <div class="doctor-card">
+      <h3>Dr. M.S. Neethu – M.B.B.S</h3>
+      <p><strong>Specialization:</strong> General Medicine, Women's Health</p>
+      <p><strong>பணி:</strong> பொதுநலம், பெண்கள் நலம் மருத்துவர்</p>
+      <p><strong>Available:</strong> 9:00 AM to 1:00 PM</p>
+    </div>
 
-  <div class="doctor-card">
-    <h3>Dr. M.S. Neethu – M.B.B.S</h3>
-    <p><strong>Specialization:</strong> General Medicine, Women's Health</p>
-    <p><strong>பணி:</strong> பொதுநலம், பெண்கள் நலம் மருத்துவர்</p>
-        <p><strong>Available:</strong> 9:00 AM to 1:00 PM</p>
-  </div>
+    <div class="doctor-card">
+      <h3>Dr. S. Shriram – M.B.B.S, M.D (Paed)</h3>
+      <p><strong>Specialization:</strong> Pediatrics, Child and General Medicine</p>
+      <p><strong>பணி:</strong> பச்சிளம் குழந்தைகள், குழந்தைகள் நலம் மற்றும் பொதுநலம் மருத்துவர்</p>
+      <p><strong>Available:</strong> 04:00 PM to 9:00 PM</p>
+    </div>
 
-  <div class="doctor-card">
-    <h3>Dr. S. Shriram – M.B.B.S, M.D (Paed)</h3>
-    <p><strong>Specialization:</strong> Pediatrics, Child and General Medicine</p>
-    <p><strong>பணி:</strong> பச்சிளம் குழந்தைகள், குழந்தைகள் நலம் மற்றும் பொதுநலம் மருத்துவர்</p>
-        
-     <p><strong>Available:</strong> 04:00 PM to 9:00 PM</p>
-  </div>
+    <div class="doctor-card">
+      <h3>Dr. S. Sindhuja – M.B.B.S, M.D (DVL)</h3>
+      <p><strong>Specialization:</strong> Dermatology & Cosmetic Treatments</p>
+      <p><strong>பணி:</strong> சிறப்பு தோல் மற்றும் அழகியல் சிகிச்சை நிபுணர்</p>
+      <p><strong>Available:</strong> 12:00 PM to 2:00 PM</p>
+    </div>
+  </section>
 
-  <div class="doctor-card">
-    <h3>Dr. S. Sindhuja – M.B.B.S, M.D (DVL)</h3>
-    <p><strong>Specialization:</strong> Dermatology & Cosmetic Treatments</p>
-    <p><strong>பணி:</strong> சிறப்பு தோல் மற்றும் அழகியல் சிகிச்சை நிபுணர்</p>
-   <p><strong>Available:</strong> 12:00 PM to 2:00 PM</p>
-  </div>
+  <section id="about" class="tab-content">
+    <h2>About SN Clinic</h2>
+    <p>SN Clinic is dedicated to providing compassionate, high-quality healthcare. With experienced doctors in general medicine, pediatrics, and dermatology, we aim to treat each patient with personalized attention and care.</p>
+  </section>
 
+  <section id="timings" class="tab-content">
+    <h2>Clinic Timings</h2>
+    <ul>
+      <li><strong>Morning:</strong> 9:00 AM – 1:00 PM</li>
+      <li><strong>Noon:</strong> 12:00 PM – 2:00 PM</li>
+      <li><strong>Evening:</strong> 4:00 PM – 9:00 PM</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="tab-content">
+    <h2>Contact</h2>
+    <p><strong>Location:</strong> V.R.P. Complex, Muthur Road, K. Othakkadai, Kodumudi – 638 151</p>
+    <p><strong>Phone:</strong> +91 98765 43210</p>
+    <p><strong>Email:</strong> info@snclinic.in</p>
+  </section>
 </main>
 
 <footer>
-   “Caring for every life we touch.”
+  “Caring for every life we touch.” <br> &copy; 2025 SN Clinic
 </footer>
 
 </body>
