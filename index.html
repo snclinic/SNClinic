@@ -12,6 +12,7 @@
     body {
       margin: 0;
       font-family: "Segoe UI", sans-serif;
+      background-color: #f2f4f8;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
@@ -78,16 +79,43 @@
     }
 
     .doctor-card {
-      border: 1px solid #ccc;
-      padding: 15px;
-      margin-bottom: 15px;
-      border-radius: 8px;
-      background: #f9f9f9;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: transform 0.2s ease;
+    }
+
+    .doctor-card:hover {
+      transform: scale(1.01);
+    }
+
+    .doctor-card h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      color: #007B9E;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .doctor-info p {
+      margin: 8px 0;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    .doctor-info strong {
+      display: inline-block;
+      width: 140px;
+      color: #555;
     }
 
     footer {
       text-align: center;
-      padding: 10px;
+      padding: 12px;
       background-color: #007B9E;
       color: white;
       margin-top: auto;
@@ -118,6 +146,51 @@
         width: 32px;
         height: 32px;
       }
+
+      main {
+        padding: 16px;
+      }
+
+      .doctor-card {
+        padding: 18px 16px;
+      }
+
+      .doctor-card h3 {
+        font-size: 1.05rem;
+        margin-bottom: 10px;
+        gap: 6px;
+      }
+
+      .doctor-info p {
+        font-size: 0.95rem;
+        margin: 6px 0;
+        line-height: 1.6;
+      }
+
+      .doctor-info strong {
+        display: block;
+        width: auto;
+        margin-bottom: 2px;
+      }
+    }
+
+    @media (min-width: 769px) {
+      main {
+        padding: 20px 60px;
+        margin-left: 150px;
+      }
+.cards-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.doctor-card {
+  width: 100%;
+  max-width: 600px;
+}
+
     }
   </style>
 </head>
@@ -137,27 +210,35 @@
   </header>
 
   <main>
-    <section id="doctors" class="tab-content active">
-      <div class="doctor-card">
-        <h3>Dr. M.S. Neethu – M.B.B.S</h3>
-        <p><strong>Specialization:</strong> General Medicine, Women's Health</p>
-        <p><strong>பணி:</strong> பொதுநலம், பெண்கள் நலம் மருத்துவர்</p>
-        <p><strong>Available:</strong> 9:00 AM to 1:00 PM</p>
+    <section id="doctors" class="tab-content active" >
+	<div class="cards-wrapper">
+      <div class="doctor-card" >
+        <h3>👩‍⚕️ Dr. M.S. Neethu – M.B.B.S</h3>
+        <div class="doctor-info">
+          <p><strong>Specialization:</strong> General Medicine, Women's Health</p>
+          <p><strong>பணி:</strong> பொதுநலம், பெண்கள் நலம் மருத்துவர்</p>
+          <p><strong>Available:</strong> 9:00 AM to 1:00 PM</p>
+        </div>
       </div>
 
       <div class="doctor-card">
-        <h3>Dr. S. Shriram – M.B.B.S, M.D (Paed)</h3>
-        <p><strong>Specialization:</strong> Pediatrics, Child and General Medicine</p>
-        <p><strong>பணி:</strong> பச்சிளம் குழந்தைகள், குழந்தைகள் நலம் மற்றும் பொதுநலம் மருத்துவர்</p>
-        <p><strong>Available:</strong> 04:00 PM to 9:00 PM</p>
+        <h3>👨‍⚕️ Dr. S. Shriram – M.B.B.S, M.D (Paed)</h3>
+        <div class="doctor-info">
+          <p><strong>Specialization:</strong> Pediatrics, Child and General Medicine</p>
+          <p><strong>பணி:</strong> பச்சிளம் குழந்தைகள், குழந்தைகள் நலம் மற்றும் பொதுநலம் மருத்துவர்</p>
+          <p><strong>Available:</strong> 04:00 PM to 9:00 PM</p>
+        </div>
       </div>
 
       <div class="doctor-card">
-        <h3>Dr. S. Sindhuja – M.B.B.S, M.D (DVL)</h3>
-        <p><strong>Specialization:</strong> Dermatology & Cosmetic Treatments</p>
-        <p><strong>பணி:</strong> சிறப்பு தோல் மற்றும் அழகியல் சிகிச்சை நிபுணர்</p>
-        <p><strong>Available:</strong> 12:00 PM to 2:00 PM</p>
+        <h3>🧴 Dr. S. Sindhuja – M.B.B.S, M.D (DVL)</h3>
+        <div class="doctor-info">
+          <p><strong>Specialization:</strong> Dermatology & Cosmetic Treatments</p>
+          <p><strong>பணி:</strong> சிறப்பு தோல் மற்றும் அழகியல் சிகிச்சை நிபுணர்</p>
+          <p><strong>Available:</strong> 12:00 PM to 2:00 PM</p>
+        </div>
       </div>
+	     </div>
     </section>
 
     <section id="about" class="tab-content">
@@ -200,16 +281,13 @@
       link.addEventListener('click', (e) => {
         e.preventDefault();
 
-        // Remove active class from all links and tabs
         navLinks.forEach(l => l.classList.remove('active'));
         tabContents.forEach(tab => tab.classList.remove('active'));
 
-        // Add active class to clicked link and corresponding tab
         link.classList.add('active');
         const target = link.getAttribute('href').substring(1);
         document.getElementById(target).classList.add('active');
 
-        // Close nav on mobile after click
         if (window.innerWidth <= 768) {
           navbar.classList.remove('show');
         }
