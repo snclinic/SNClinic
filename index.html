@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>SN Clinic</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     html, body {
       margin: 0;
@@ -27,23 +27,50 @@
       text-align: center;
     }
 
-    header h1 {
-      margin: 10px 0 5px;
-      font-size: 2rem;
+    .branding {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
     }
 
     .logo {
       height: 60px;
+      width: auto;
+    }
+
+    .branding h1 {
+      margin: 0;
+      font-size: 2rem;
     }
 
     nav {
+      background-color: #004080;
       display: flex;
       justify-content: center;
-      background-color: #004080;
+      align-items: center;
       flex-wrap: wrap;
+      position: relative;
     }
 
-    nav a {
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      padding: 12px 20px;
+    }
+
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .menu a {
       padding: 14px 20px;
       text-decoration: none;
       color: white;
@@ -52,7 +79,8 @@
       transition: background 0.3s;
     }
 
-    nav a:hover, nav a.active {
+    .menu a:hover,
+    .menu a.active {
       background-color: #003366;
       border-bottom: 3px solid #00bfff;
     }
@@ -104,85 +132,69 @@
       padding: 15px 10px;
       font-size: 0.9rem;
     }
-.branding {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-}
 
-.logo {
-  height: 60px;
-  width: auto;
-}
-
-.branding h1 {
-  margin: 0;
-  font-size: 2rem;
-}
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.4rem;
-      }
-
-      nav a {
-        flex: 1 1 100%;
-        text-align: center;
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      header {
+        padding: 15px;
       }
 
       .logo {
         height: 45px;
       }
 
+      .branding h1 {
+        font-size: 1.5rem;
+      }
 
-  .branding h1 {
-    font-size: 1.4rem;
-  }
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .menu-toggle {
+        display: block;
+        margin-left: auto;
+        margin-right: 10px;
+      }
+
+      .menu {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+      }
+
+      .menu.show {
+        display: flex;
+      }
+
+      .menu a {
+        width: 100%;
+        text-align: left;
+        padding: 12px 20px;
+        border-top: 1px solid #005eb8;
+      }
     }
   </style>
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const tabs = document.querySelectorAll("nav a");
-      const contents = document.querySelectorAll(".tab-content");
-
-      tabs.forEach(tab => {
-        tab.addEventListener("click", (e) => {
-          e.preventDefault();
-          const target = tab.getAttribute("href").replace("#", "");
-
-          tabs.forEach(t => t.classList.remove("active"));
-          contents.forEach(c => c.classList.remove("active"));
-
-          tab.classList.add("active");
-          document.getElementById(target).classList.add("active");
-
-          history.pushState(null, "", `#${target}`);
-        });
-      });
-
-      // Load tab based on hash
-      const hash = window.location.hash.replace("#", "") || "doctors";
-      document.querySelector(`nav a[href="#${hash}"]`)?.click();
-    });
-  </script>
 </head>
 <body>
 
 <header>
- <div class="branding">
-    <img src="images/logo.png" class="logo" alt="SN Clinic Logo">
+  <div class="branding">
+    <img src="images/logo.png" class="logo" alt="SN Clinic Logo" />
     <h1>SN CLINIC</h1>
   </div>
   <p>📍 V.R.P. காம்பளக்ஸ், முத்தூர் ரோடு, க.ஒத்தக்கடை, கொடுமுடி – 638 151</p>
 </header>
 
 <nav>
-  <a href="#doctors" class="active">Doctors</a>
-  <a href="#about">About</a>
-  <a href="#timings">Timings</a>
-  <a href="#contact">Contact</a>
+  <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+  <div class="menu">
+    <a href="#doctors" class="active">Doctors</a>
+    <a href="#about">About</a>
+    <a href="#timings">Timings</a>
+    <a href="#contact">Contact</a>
+  </div>
 </nav>
 
 <main>
@@ -226,14 +238,47 @@
   <section id="contact" class="tab-content">
     <h2>Contact</h2>
     <p><strong>Location:</strong> V.R.P. Complex, Muthur Road, K. Othakkadai, Kodumudi – 638 151</p>
-    <p><strong>Phone:</strong> +91 98765 43210</p>
-    <p><strong>Email:</strong> info@snclinic.in</p>
+    <p><strong>Phone:</strong> 6380626667</p>
   </section>
 </main>
 
 <footer>
-  “Caring for every life we touch.” <br> &copy; 2025 SN Clinic
+  “Caring for every life we touch.” <br /> &copy; 2025 SN Clinic
 </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
+
+    toggleBtn.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
+
+    // Tab functionality
+    const tabs = document.querySelectorAll("nav a");
+    const contents = document.querySelectorAll(".tab-content");
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", (e) => {
+        e.preventDefault();
+        const target = tab.getAttribute("href").replace("#", "");
+
+        tabs.forEach(t => t.classList.remove("active"));
+        contents.forEach(c => c.classList.remove("active"));
+
+        tab.classList.add("active");
+        document.getElementById(target).classList.add("active");
+
+        history.pushState(null, "", `#${target}`);
+        menu.classList.remove("show"); // Close menu after selection
+      });
+    });
+
+    const hash = window.location.hash.replace("#", "") || "doctors";
+    document.querySelector(`nav a[href="#${hash}"]`)?.click();
+  });
+</script>
 
 </body>
 </html>
